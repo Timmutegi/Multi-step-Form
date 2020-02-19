@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.d-flex {
+    margin-top: 50px;
+}
+
+.step {
+    margin-bottom: 50px;
+}
