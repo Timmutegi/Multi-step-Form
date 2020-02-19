@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="stepThree">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="firstname">Company Name</label>
+                <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors}">
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <div>Name is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="lastname">Company Location</label>
+                <input type="text" class="form-control" formControlName="location" [ngClass]="{ 'is-invalid': submitted && f.location.errors}">
+                <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                    <div>Location is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="lastname">Company Revenue</label>
+                <input type="number" class="form-control" formControlName="revenue" [ngClass]="{ 'is-invalid': submitted && f.revenue.errors}">
+                <div *ngIf="submitted && f.revenue.errors" class="invalid-feedback">
+                    <div>Revenue is required</div>
+                </div>
+            </div>
+        </div>
+        <button type="button" (click)="save()" class="btn btn-primary">Save</button>
+        <div class="d-flex">
+            <button type="button" (click)="stepTwo()" class="btn btn-primary">Previous</button>
+            <div class="ml-auto">
+                <button type="button" (click)="submit()" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
