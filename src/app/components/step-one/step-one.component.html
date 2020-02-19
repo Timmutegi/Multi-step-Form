@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="step">
+        <h4>Step 1</h4>
+    </div>
+    <form [formGroup]="stepOne">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors}">
+                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                    <div>Firstname is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors}">
+                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                    <div>Lastname is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors}">
+                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                    <div>Phone Number is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Input a valid email</div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <button type="button" (click)="storeStepOne()" class="btn btn-primary">Save</button>
+            <div class="ml-auto">
+                <button type="button" (click)="next()" class="btn btn-primary">Step 2</button>
+            </div>
+        </div>
+    </form>
+
+</div>
