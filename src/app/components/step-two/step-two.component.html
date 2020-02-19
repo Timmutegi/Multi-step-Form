@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="step">
+        <h4>Step 2</h4>
+    </div>
     <form [formGroup]="stepTwo">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -16,11 +19,11 @@
                 </div>
             </div>
         </div>
-        <button type="button" (click)="storestepTwo()" class="btn btn-primary">Save</button>
+        <button type="button" (click)="storestepTwo()" class="btn btn-success">Save</button>
         <div class="d-flex">
-            <button type="button" (click)="stepOne()" class="btn btn-primary">Step One</button>
+            <button type="button" (click)="stepOne()" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Step Two</button>
             <div class="ml-auto">
-                <button type="button" (click)="next()" class="btn btn-primary">Step 3</button>
+                <button type="button" (click)="next()" class="btn btn-primary">Step 3 <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </form>
