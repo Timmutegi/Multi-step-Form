@@ -1,0 +1,28 @@
+<div class="container">
+    <form [formGroup]="stepTwo">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nationalID">National ID</label>
+                <input type="text" class="form-control" formControlName="id" [ngClass]="{ 'is-invalid': submitted && f.id.errors}">
+                <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+                    <div>National ID is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="kra">KRA Pin</label>
+                <input type="text" class="form-control" formControlName="kra" [ngClass]="{ 'is-invalid': submitted && f.kra.errors}">
+                <div *ngIf="submitted && f.kra.errors" class="invalid-feedback">
+                    <div>KRA PIN is required</div>
+                </div>
+            </div>
+        </div>
+        <button type="button" (click)="storestepTwo()" class="btn btn-primary">Save</button>
+        <div class="d-flex">
+            <button type="button" (click)="stepOne()" class="btn btn-primary">Step One</button>
+            <div class="ml-auto">
+                <button type="button" (click)="next()" class="btn btn-primary">Step 3</button>
+            </div>
+        </div>
+    </form>
+
+</div>
