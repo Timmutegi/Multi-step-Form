@@ -8,6 +8,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 
 const routes: Routes = [
   { path: '', component: StepOneComponent },
+  { path: 'step-one', component: StepOneComponent },
   { path: 'step-two', component: StepTwoComponent },
   { path: 'step-three', component: StepThreeComponent },
   { path: 'summary/:ID', component: SummaryComponent }
