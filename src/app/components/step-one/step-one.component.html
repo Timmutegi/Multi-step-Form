@@ -21,10 +21,11 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="phone">Phone Number</label>
-                <input type="text" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors}">
+                <label for="phone">Phone Number i.e +254...</label>
+                <input type="number" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors}">
                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                    <div>Phone Number is required</div>
+                    <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                    <div *ngIf="f.phone.errors.pattern">Input a valid phone number</div>
                 </div>
             </div>
             <div class="form-group col-md-6">

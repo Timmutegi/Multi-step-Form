@@ -24,7 +24,7 @@ export class StepOneComponent implements OnInit {
     this.stepOne = this.formBuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern('^([\+254])([0-9]{11})$')]],
       email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$')]]
     });
     this.patchForm();

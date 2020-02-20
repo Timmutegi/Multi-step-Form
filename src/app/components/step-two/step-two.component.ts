@@ -20,7 +20,7 @@ export class StepTwoComponent implements OnInit {
 
   ngOnInit() {
      this.stepTwo = this.formBuilder.group({
-      id: ['', Validators.required],
+      id:  ['', [Validators.required, Validators.pattern('([0-9]{8})')]],
       kra: ['', Validators.required],
     });
 
