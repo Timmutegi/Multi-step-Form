@@ -1,4 +1,7 @@
 <div class="container">
+    <div *ngIf="message" class="alert alert-success alert-dismissible fade show d-flex justify-content-center" role="alert">
+        Data Successfuly Submitted
+    </div>
     <div *ngIf="isLoading" class="d-flex justify-content-center">
         <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
@@ -10,41 +13,50 @@
             <h2 class="mb-4">Step 1</h2>
             <div class="row mb-4">
                 <div class="col-md-6">
-                    <p class="card-text"><span>First Name:</span> {{data.firstname}} </p>
+                    <h6>First Name:</h6>
+                    <p class="card-text mb-4"> {{data.firstname}} </p>
                 </div>
                 <div class="col-md-6">
-                    <p class="card-text"><span>Last Name:</span> {{data.lastname}} </p>
+                    <h6>Last Name:</h6>
+                    <p class="card-text"> {{data.lastname}} </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <p class="card-text"><span>Phone Number:</span> {{data.phone}} </p>
+                    <h6>Phone Number:</h6>
+                    <p class="card-text mb-4"> {{data.phone}} </p>
                 </div>
                 <div class="col-md-6">
-                    <p class="card-text"><span>Email:</span> {{data.email}} </p>
+                    <h6>Email:</h6>
+                    <p class="card-text"> {{data.email}} </p>
                 </div>
             </div>
             <hr>
             <h2 class="mb-4">Step 2</h2>
             <div class="row mb-4">
                 <div class="col-md-6">
-                    <p class="card-text"><span>National ID:</span> {{data.nationalID}} </p>
+                    <h6>National ID:</h6>
+                    <p class="card-text mb-4"> {{data.nationalID}} </p>
                 </div>
                 <div class="col-md-6">
-                    <p class="card-text"><span>KRA Pin:</span> {{data.KRA}} </p>
+                    <h6>KRA Pin:</h6>
+                    <p class="card-text"> {{data.KRA}} </p>
                 </div>
             </div>
             <hr>
             <h2 class="mb-4">Step 3</h2>
             <div class="row mb-4">
                 <div class="col-md-4">
-                    <p class="card-text"><span>Company Name:</span> {{data.companyName}} </p>
+                    <h6>Company Name:</h6>
+                    <p class="card-text mb-4"> {{data.companyName}} </p>
                 </div>
                 <div class="col-md-4">
-                    <p class="card-text"><span>Company Location:</span> {{data.companyLocation}} </p>
+                    <h6>Company Location:</h6>
+                    <p class="card-text mb-4"> {{data.companyLocation}} </p>
                 </div>
                 <div class="col-md-4">
-                    <p class="card-text"><span>Company Revenue:</span> {{data.companyRevenue}} </p>
+                    <h6>Company Revenue:</h6>
+                    <p class="card-text mb-4"> {{data.companyRevenue}} </p>
                 </div>
             </div>
         </div>
