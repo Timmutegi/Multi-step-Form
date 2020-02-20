@@ -5,6 +5,7 @@ import { AppState } from '../../app.state';
 import { Store } from '@ngrx/store';
 import * as UserActions from '../../actions/index.actions';
 import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-step-three',
@@ -15,8 +16,9 @@ export class StepThreeComponent implements OnInit {
   stepThree: FormGroup;
   submitted: boolean;
   user: User[];
+  data: JSON;
 
-  constructor(private store: Store<AppState>, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private api: ApiService, private store: Store<AppState>, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.stepThree = this.formBuilder.group({
@@ -35,7 +37,7 @@ export class StepThreeComponent implements OnInit {
     this.store.select('user').subscribe(state => {
       this.user = state;
     });
-    console.log(this.user['0'].firstname);
+
     this.stepThree.patchValue({
       name: this.user['0'].companyName,
       location: this.user['0'].companyLocation,
@@ -68,6 +70,18 @@ export class StepThreeComponent implements OnInit {
   }
 
   submit() {
+    this.submitted = true;
+    if (this.stepThree.invalid) {
+      return;
+    }
+    this.store.select('user').subscribe(state => {
+      this.data = JSON.parse(JSON.stringify(state['0']));
+      // console.log(this.data);
+    });
+    this.api.postData('/multi-step-form/', this.data).subscribe(
+      res => {
+      console.log(res);
+    });
   }
 
 }
