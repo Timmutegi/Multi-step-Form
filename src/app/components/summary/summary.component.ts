@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SummaryComponent implements OnInit {
   data: {};
   isLoading = true;
+  message: boolean;
 
   constructor(private api: ApiService, private activatedRoute: ActivatedRoute) { }
 
@@ -20,6 +21,7 @@ export class SummaryComponent implements OnInit {
       res => {
         // console.log(res);
         if (res.code === 200) {
+          this.message = true;
           this.isLoading = false;
           this.data = [res.data];
           // console.log(this.data);
