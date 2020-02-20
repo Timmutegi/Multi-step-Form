@@ -12,4 +12,8 @@ export class ApiService {
   postData(endpoint: string, data: JSON) {
     return this.http.post<any>(this.baseUrl + endpoint, data);
   }
+
+  getData(endpoint: string) {
+    return this.http.get<any>(this.baseUrl + endpoint);
+  }
 }
