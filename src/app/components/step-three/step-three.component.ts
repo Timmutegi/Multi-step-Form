@@ -17,6 +17,7 @@ export class StepThreeComponent implements OnInit {
   submitted: boolean;
   user: User[];
   data: JSON;
+  message: string;
 
   constructor(private api: ApiService, private store: Store<AppState>, private formBuilder: FormBuilder, private router: Router) { }
 
@@ -76,13 +77,16 @@ export class StepThreeComponent implements OnInit {
     }
     this.store.select('user').subscribe(state => {
       this.data = JSON.parse(JSON.stringify(state['0']));
-      // console.log(this.data);
     });
     this.api.postData('/multi-step-form/', this.data).subscribe(
       res => {
-      // console.log(res.savedTest._id);
-      const ID = res.savedTest._id;
-      this.router.navigate([`summary/${ID}`]);
+        if (res.code === 200) {
+             const ID = res.savedTest._id;
+             this.router.navigate([`summary/${ID}`]);
+        } else {
+          console.log(400);
+        }
+
     });
   }
 
