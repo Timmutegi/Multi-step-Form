@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: StepOneComponent },
   { path: 'step-two', component: StepTwoComponent },
   { path: 'step-three', component: StepThreeComponent },
-  { path: 'summary', component: SummaryComponent }
+  { path: 'summary/:ID', component: SummaryComponent }
 ];
 
 @NgModule({
