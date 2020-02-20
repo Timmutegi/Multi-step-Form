@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StepTwoComponent } from './step-two.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Store, StateObservable, State } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 describe('StepTwoComponent', () => {
   let component: StepTwoComponent;
@@ -8,7 +11,9 @@ describe('StepTwoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepTwoComponent ]
+      declarations: [ StepTwoComponent ],
+      imports: [ReactiveFormsModule],
+      providers: [{provide: StateObservable, useValue: State}, {provide: Store}, {provide: Router}]
     })
     .compileComponents();
   }));
