@@ -12,6 +12,7 @@ import { StepThreeComponent } from './components/step-three/step-three.component
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/step-one-reducer';
 import { SummaryComponent } from './components/summary/summary.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SummaryComponent } from './components/summary/summary.component';
     StepOneComponent,
     StepTwoComponent,
     StepThreeComponent,
-    SummaryComponent
+    SummaryComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
