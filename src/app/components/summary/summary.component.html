@@ -1,1 +1,52 @@
-<p>summary works!</p>
+<div class="container">
+    <div *ngIf="isLoading" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div *ngFor="let data of data" class="card">
+        <h5 class="card-header">Summary</h5>
+        <div class="card-body">
+            <h2 class="mb-4">Step 1</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p class="card-text"><span>First Name:</span> {{data.firstname}} </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="card-text"><span>Last Name:</span> {{data.lastname}} </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="card-text"><span>Phone Number:</span> {{data.phone}} </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="card-text"><span>Email:</span> {{data.email}} </p>
+                </div>
+            </div>
+            <hr>
+            <h2 class="mb-4">Step 2</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p class="card-text"><span>National ID:</span> {{data.nationalID}} </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="card-text"><span>KRA Pin:</span> {{data.KRA}} </p>
+                </div>
+            </div>
+            <hr>
+            <h2 class="mb-4">Step 3</h2>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <p class="card-text"><span>Company Name:</span> {{data.companyName}} </p>
+                </div>
+                <div class="col-md-4">
+                    <p class="card-text"><span>Company Location:</span> {{data.companyLocation}} </p>
+                </div>
+                <div class="col-md-4">
+                    <p class="card-text"><span>Company Revenue:</span> {{data.companyRevenue}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
