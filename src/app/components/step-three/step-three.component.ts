@@ -80,7 +80,9 @@ export class StepThreeComponent implements OnInit {
     });
     this.api.postData('/multi-step-form/', this.data).subscribe(
       res => {
-      console.log(res);
+      // console.log(res.savedTest._id);
+      const ID = res.savedTest._id;
+      this.router.navigate([`summary/${ID}`]);
     });
   }
 
